@@ -12,12 +12,12 @@
     <title>Welcome</title>
 </head>
 <body class="">
-<header class="fixed top-0 w-full bg-[url('/images/welcomePageImage.jpg')] bg-center bg-cover">
+<header class="fixed top-0 w-full bg-[url('/public/images/welcomePageImage.jpg')] bg-center bg-cover bg-no-repeat">
     <div class="hover:bg-ivory-custom hover:text-green-custom">
         <nav
             class="font-domine text-3xl font-semibold flex justify-between items-center w-[92%] mx-auto h-[4.5vw] text-ivory-custom hover:text-green-custom">
             <div>
-                <img class="w-16" src="../../images/logo.png" alt="logo">
+                <a href="/"><img class="w-40" src="{{asset('../images/logo.png')}}" alt="logo"></a>
             </div>
             <div class="">
                 <ul class="flex items-center gap-[4vw]">
@@ -43,7 +43,7 @@
         </nav>
     </div>
     <div
-        class="relative bg-cover bg-center bg-no-repeat text-center h-screen object-contain w-full">
+        class="relative text-center h-screen">
         <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed">
             <div class="flex h-full items-center justify-center">
                 <div>
@@ -59,6 +59,9 @@
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="h-screen flex justify-center items-center mx-auto">
+            <img class="w-16 absolute bottom-0 pb-20 animate-bounce" src="{{asset("images/arrow.png")}}">
         </div>
     </div>
 </header>
