@@ -6,10 +6,21 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
-        fontFamily: {
-            'open-sans': ["open-sans", "open-sans"],
-            'domine': ["domine", "domine"]
+        extend: {
+            fontFamily: {
+                'open-sans': ["open-sans", "open-sans"],
+                'domine': ["domine", "domine"]
+            },
+            colors: {
+                'green-custom': "#009B4D",
+                'yellow-custom': "#FFCC00",
+                'ivory-custom': "#FAF5E9",
+                'l-blue': "#6BCFFF",
+                'm-blue': "#4CB9ED",
+                'd-cyan': "#2378A1",
+                'l-orange': "#F3992C",
+                'd-orange': "#AD6915"
+            },
         },
     },
     plugins: [],
