@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RoomsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $rooms = \App\Models\Room::all();
+
+    return view('index', compact('rooms'));
 });
+
+Route::get('/login', function (){
+   return view('login');
+});
+
+Route::post('/rooms/store', [RoomsController::class, 'store'])->name('rooms.store');

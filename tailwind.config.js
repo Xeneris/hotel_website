@@ -4,6 +4,8 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        './vendor/razorui/blade-application-ui/resources/views/components/**/*.blade.php',
+
     ],
     theme: {
         extend: {
@@ -23,6 +25,9 @@ export default {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
+    ],
 }
 
