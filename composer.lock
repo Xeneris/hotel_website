@@ -3235,47 +3235,6 @@
             "time": "2023-04-15T23:01:58+00:00"
         },
         {
-            "name": "razorui/blade-application-ui",
-            "version": "v0.4.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:RazorUI/blade-application-ui.git",
-                "reference": "cb22d2e20729ff1b348ad03da78790976d8983cd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.razorui.com/dist/razorui/blade-application-ui/razorui-blade-application-ui-cb22d2e20729ff1b348ad03da78790976d8983cd-zip-1334a0.zip",
-                "reference": "cb22d2e20729ff1b348ad03da78790976d8983cd",
-                "shasum": "07eac832b2fb346f227ef313f03ce050e1a81594"
-            },
-            "require": {
-                "illuminate/support": "^8.0|^9.0|^10.0",
-                "php": "^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "RazorUi\\BladeApplicationUi\\BladeApplicationUiServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "RazorUi\\BladeApplicationUi\\": "src"
-                }
-            },
-            "description": "Laravel Blade components for Razor UI's Web Application kit.",
-            "support": {
-                "source": "https://github.com/RazorUI/blade-application-ui/tree/v0.4.0",
-                "issues": "https://github.com/RazorUI/blade-application-ui/issues"
-            },
-            "time": "2023-02-20T13:56:14+00:00"
-        },
-        {
             "name": "symfony/console",
             "version": "v6.3.4",
             "source": {
