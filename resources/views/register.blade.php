@@ -9,10 +9,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Domine&family=Open+Sans:wght@300;400&display=swap');
     </style>
-    <title>Welcome</title>
+    <title>Register</title>
 </head>
 <body>
 <x-navbar/>
-<x-login-page/>
+<x-register-page/>
 </body>
 </html>

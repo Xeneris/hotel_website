@@ -21,8 +21,12 @@ Route::get('/', function () {
     return view('index', compact('rooms'));
 });
 
-Route::get('/login', function (){
-   return view('login');
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/register', function () {
+    return view('register');
 });
 
 Route::post('/rooms/store', [RoomsController::class, 'store'])->name('rooms.store');
