@@ -2,6 +2,26 @@
 @section('title', 'Login')
 @section('content')
     <div class="bg-[url('/public/images/welcomePageImage.jpg')] bg-center bg-cover bg-no-repeat">
+        <div role="alert">
+            @if($errors->any())
+                <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2 mt-[3.5%]">
+                    Danger
+                    @foreach($errors->all() as $error)
+                        <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+                            {{$error}}
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+            @if(session()->has('success'))
+                <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2 mt-[3.5%]">
+                    Success
+                    <div class="border border-t-0 border-green-400 rounded-b bg-green-100 px-4 py-3 text-green-700">
+                        {{session('success')}}
+                    </div>
+                </div>
+            @endif
+        </div>
         <section>
             <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900">
@@ -13,7 +33,8 @@
                         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                             Sign in to your account
                         </h1>
-                        <form class="space-y-4 md:space-y-6" action="#">
+                        <form class="space-y-4 md:space-y-6" action="{{route('login-post')}}" method="POST">
+                            @csrf
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your
                                     email</label>

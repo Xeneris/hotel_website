@@ -8,4 +8,7 @@
         <p>{{$room->name}}</p>
     @endforeach
 
+    <div>
+        {{auth()->user()->first_name}}
+    </div>
 @endsection

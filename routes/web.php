@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RoomsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthManager;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,15 +19,17 @@ Route::get('/', function () {
 
     $rooms = \App\Models\Room::all();
 
-    return view('index', compact('rooms'));
-});
+    return view('pages/index', compact('rooms'));
+})->name('index');
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [AuthManager::class, 'login'])->name('login');
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::post('/login', [AuthManager::class, 'loginPost'])->name('login-post');
+
+Route::get('/register', [AuthManager::class, 'register'])->name('register');
+
+Route::post('/register', [AuthManager::class, 'registerPost'])->name('register-post');
 
 Route::post('/rooms/store', [RoomsController::class, 'store'])->name('rooms.store');
+
+Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
