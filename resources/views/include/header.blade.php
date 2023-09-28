@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <nav class="bg-ivory-custom fixed w-full z-20 top-0 left-0 border-b">
         <div class="max-w flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center">
@@ -45,7 +45,6 @@
             </div>
         </div>
     </nav>
-
     <script>
         const navbarContent = document.getElementById('navbar-sticky');
 
@@ -53,6 +52,4 @@
             navbarContent.classList.contains('hidden') ? navbarContent.classList.remove('hidden') : navbarContent.classList.add('hidden')
         }
     </script>
-
 </div>
-

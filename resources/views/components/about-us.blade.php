@@ -9,8 +9,6 @@
 
 
 
-
-
     <form method="POST" action="{{ route('rooms.store') }}">
         @csrf
         Name: <input type="text" name="name">
