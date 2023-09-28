@@ -12,11 +12,17 @@ class AuthManager extends Controller
 {
     function login()
     {
+        if (Auth::check()) {
+            return redirect(route('index'));
+        }
         return view('pages/login');
     }
 
     function register()
     {
+        if (Auth::check()) {
+            return redirect(route('index'));
+        }
         return view('pages/register');
     }
 
