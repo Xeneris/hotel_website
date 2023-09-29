@@ -2,31 +2,8 @@
 @section('title', 'Login')
 @section('content')
     <div class="bg-[url('/public/images/welcomePageImage.jpg')] bg-center bg-cover bg-no-repeat">
-        <div role="alert">
-            @if($errors->any())
-                <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2 mt-[3.5%]">
-                    Danger
-                    @foreach($errors->all() as $error)
-                        <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
-                            {{$error}}
-                        </div>
-                    @endforeach
-                </div>
-            @endif
-            @if(session()->has('success'))
-                <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2 mt-[3.5%]">
-                    Success
-                    <div class="border border-t-0 border-green-400 rounded-b bg-green-100 px-4 py-3 text-green-700">
-                        {{session('success')}}
-                    </div>
-                </div>
-            @endif
-        </div>
         <section>
             <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900">
-                    Eco Hotel
-                </a>
                 <div
                     class="w-full bg-ivory-custom rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
                     <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -74,6 +51,20 @@
                                                               class="font-medium text-primary-600 hover:underline">Sign
                                     up</a>
                             </p>
+                            <div role="alert" class="pb-[5%] w-auto">
+                                @if(session()->has('error'))
+                                    <div
+                                        class="border border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+                                        {{session('error')}}
+                                    </div>
+                                @endif
+                                @if(session()->has('success'))
+                                    <div
+                                        class="border border-green-400 rounded-b bg-green-100 px-4 py-3 text-green-700">
+                                        {{session('success')}}
+                                    </div>
+                                @endif
+                            </div>
                         </form>
                     </div>
                 </div>
