@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\RoomsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
@@ -33,3 +34,7 @@ Route::post('/register', [AuthManager::class, 'registerPost'])->name('register-p
 Route::post('/rooms/store', [RoomsController::class, 'store'])->name('rooms.store');
 
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
+
+Route::get('/profile', [AuthManager::class, 'profile'])->name('profile')->middleware('auth');
+
+Route::post('/profile', [AvatarController::class, 'update'])->name('profile-post');

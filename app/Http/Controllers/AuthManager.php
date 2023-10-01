@@ -33,8 +33,10 @@ class AuthManager extends Controller
             'password' => 'required'
         ]);
 
+        $remembered = $request->remember == 'on' ? 'true' : 'false';
+
         $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $remembered)) {
             return redirect()->intended(route('index'));
         }
         return redirect(route('login'))->with('error', "Username or password was incorrect");
@@ -66,5 +68,10 @@ class AuthManager extends Controller
         Session::flush();
         Auth::logout();
         return redirect(route('login'));
+    }
+
+    function profile()
+    {
+        return view('pages.edit-profile');
     }
 }
