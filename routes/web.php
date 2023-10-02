@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AvatarController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
@@ -37,4 +37,4 @@ Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 
 Route::get('/profile', [AuthManager::class, 'profile'])->name('profile')->middleware('auth');
 
-Route::post('/profile', [AvatarController::class, 'update'])->name('profile-post');
+Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('profile-post');
