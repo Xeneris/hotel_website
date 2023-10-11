@@ -74,4 +74,10 @@ class AuthManager extends Controller
     {
         return view('pages.edit-profile');
     }
+
+    function admin()
+    {
+        return view('pages.admin');
+    }
+
 }

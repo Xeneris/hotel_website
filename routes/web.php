@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomsController;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 
@@ -38,3 +40,7 @@ Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 Route::get('/profile', [AuthManager::class, 'profile'])->name('profile')->middleware('auth');
 
 Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('profile-post');
+
+Route::middleware([Authenticate::class, AdminMiddleware::class])->group(function () {
+   Route::get('/admin', [AuthManager::class, 'admin'])->name('admin');
+});
